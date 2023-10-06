@@ -3,14 +3,7 @@
   <div class="main-container">
     <ng-container *ngFor="let cat of catsVoteImg">
       <div class="cat-container">
-        <div class="cat-img"  (click)="vote(cat)" [ngStyle]="{backgroundImage:'url(' + cat.url + ')'}"
-          style="    width: 300px;
-          height: 300px;
-          background-position: center;
-          background-size: cover;
-          background-repeat: no-repeat;
-          border-radius: 50%;"
-        ></div>
+        <div class="cat-img"  (click)="vote(cat)" [ngStyle]="{backgroundImage:'url(' + cat.url + ')'}"></div>
       </div>
       
     </ng-container>
