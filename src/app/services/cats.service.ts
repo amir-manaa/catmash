@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
-import { Observable, map, catchError, throwError, tap, BehaviorSubject, combineLatest, from } from 'rxjs';
+import { Observable, map, catchError, throwError, BehaviorSubject } from 'rxjs';
 import { apiCats, Voting, Cat } from '../shared/models';
 
 @Injectable({

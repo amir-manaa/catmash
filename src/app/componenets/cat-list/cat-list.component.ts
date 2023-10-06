@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CatsService } from 'src/app/services';
-import { EMPTY, Subject, BehaviorSubject } from 'rxjs';
+import { Subject, BehaviorSubject } from 'rxjs';
 import { Cat } from 'src/app/shared/models';
+import { generateRandomBetween } from 'src/app/shared/helpers/helpers';
 
 @Component({
   selector: 'app-cat-list',
@@ -47,30 +48,9 @@ export class CatListComponent implements OnInit, OnDestroy {
 
   private getRandomCats(): void {
     this.catsImg = [];
-    const catIndex1 = Math.floor(Math.random() * this.catsItems.length);
-    const catIndex2 = Math.floor(Math.random() * this.catsItems.length);
+    const catIndex1 = generateRandomBetween(0, this.catsItems.length);
+    const catIndex2 = generateRandomBetween(0, this.catsItems.length, catIndex1);
     this.catsImg.push(this.catsItems[catIndex1], this.catsItems[catIndex2]);
-
-    if (this.catsItems.length < 3) {
-      this.initCatsLit();
-    } else {
-      this.updateCatsList(catIndex1, catIndex2);
-    }
-    
-  }
-
-  private initCatsLit() {
-    this.catsService.catsImgList$.subscribe({
-      next: cats => {
-        this.catsItems = cats;
-      },
-      error: err => this.errorMessageSubject$.next(err)
-    })
-  }
-
-  private updateCatsList(catIndex1: number, catIndex2: number): void {
-    this.catsItems.splice(catIndex1, 1);
-    this.catsItems.splice(catIndex2, 1);
   }
 
   ngOnDestroy(): void {
