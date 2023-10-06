@@ -1,0 +1,21 @@
+<app-header>
+  <h2>Quel est le chat le plus mignon ?</h2>
+</app-header>
+
+<app-vote 
+  [catsVoteImg]="catsImg" 
+  [errorMessage]="errorMessage" 
+  (addVote)="vote($event)"
+>
+</app-vote>
+
+<app-footer>
+  <a routerLink="/result">
+    <h2>Voir le classement des plus beaux chats</h2>
+    <p>
+      {{ votesNumber$ | async }} 
+      <ng-container *ngIf="(votesNumber$ | async) == 0; else bawtaw">vote.</ng-container>
+      <ng-template #bawtaw>votes.</ng-template>
+    </p>
+  </a>
+</app-footer>

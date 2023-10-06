@@ -1,0 +1,21 @@
+<app-header>
+    <h2>Classement</h2>
+</app-header>
+
+<ng-container *ngIf="voteList">
+    <div class="main-container result-box">
+        <div *ngFor="let vote of voteList" class="vote-item">
+            <div class="img" [ngStyle]="{backgroundImage:'url(' + vote.url + ')'}"></div>
+            <p class="nbr-vote">{{ vote.vote }}</p>
+       </div>
+   </div>
+</ng-container>
+
+
+
+<app-footer>
+    <a routerLink="/catmash">
+        <h2>Voter</h2>
+        <p>Il y a 100 chats à départager.</p>
+    </a>
+</app-footer>

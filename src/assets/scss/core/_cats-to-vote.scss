@@ -1,0 +1,8 @@
+.cat-container {
+    cursor: pointer;
+    transition: transform .2s;
+    &:hover {
+        transition: transform .2s; /* Animation */
+        transform: scale(1.1, 1.1);
+    }
+}

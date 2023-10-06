@@ -1,0 +1,11 @@
+h1 {
+    @include title;
+}
+
+h2 {
+    @include subTitle;
+}
+
+p {
+    @include para;
+}

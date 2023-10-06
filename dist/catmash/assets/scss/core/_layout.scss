@@ -1,0 +1,13 @@
+.main-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 50px auto auto;
+    align-items: center;
+    max-width: 1024px; 
+    padding-bottom: 200px;
+
+    &.result-box {
+        flex-wrap: wrap;
+    }
+}

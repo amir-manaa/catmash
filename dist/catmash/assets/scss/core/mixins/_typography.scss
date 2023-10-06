@@ -1,0 +1,15 @@
+@mixin title {
+    font-size: $font-size-title;
+    color: $text-color;
+}
+
+@mixin subTitle {
+    font-size: $font-size-sub-title;
+    color: $text-color;
+}
+
+@mixin para {
+    font-size: $font-size-paragraph;
+    color: $text-color;
+    margin: $margin-paragraph;
+}
