@@ -14,8 +14,8 @@
     <h2>Voir le classement des plus beaux chats</h2>
     <p>
       {{ votesNumber$ | async }} 
-      <ng-container *ngIf="(votesNumber$ | async) == 0; else bawtaw">vote.</ng-container>
-      <ng-template #bawtaw>votes.</ng-template>
+      <ng-container *ngIf="(votesNumber$ | async) == 0; else plural">vote.</ng-container>
+      <ng-template #plural>votes.</ng-template>
     </p>
   </a>
 </app-footer>

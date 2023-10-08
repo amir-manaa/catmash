@@ -28,7 +28,10 @@ export class CatsService {
     const currentCat = votesList.find(vote => vote.id === cat.id);
     (currentCat) ? 
       votesList[votesList.indexOf(currentCat)].vote = votesList[votesList.indexOf(currentCat)].vote+1 : 
-      votesList.push({id: cat.id, url: cat.url, vote: 1});
+      votesList.push({
+        ... cat,
+        vote: 1
+      });
     
     this.voteListSubject.next(votesList);
 
